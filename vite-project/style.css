@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.circle {
+  background-color: hsl(8 80% 60%);
+  border-radius: 100vmax;
+}
+
+.triangle {
+  background-color: hsl(190 80% 60%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.square {
+  background-color: hsl(260 80% 60%);
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+
+.sm {
+  height: 50px;
+  width: 50px;
+}
+
+.md {
+  height: 100px;
+  width: 100px;
+}
+
+.lg {
+  height: 150px;
+  width: 150px;
+}
+
+body {
+  padding: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+
+  .sm {
+    background: blue;
+    @media only screen and (min-width: 600px) {
+      background: black;
+    }
+  }
+}
+
+.featured {
+  .card& {
+    box-shadow: 0 0 0 3px hsl(320 80% 60%), 0 0 0 6px hsl(320 80% 60%);
+  }
+}
